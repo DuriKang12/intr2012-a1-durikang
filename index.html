@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changes in housing prices in GTA</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-4">
+                <h1>Changes in housing prices in GTA</h1>
+                <p>Since the onset of the COVID-19 pandemic in early 2020, the Greater Toronto Area (GTA) housing market
+                    has undergone dramatic fluctuations, reflecting the broader economic shifts and societal changes
+                    that have shaped Canada's real estate landscape. From an initial slowdown in home sales during the
+                    early lockdowns to an unprecedented surge in prices fueled by low interest rates, shifting buyer
+                    preferences, and supply shortages, the market has continuously evolved in response to new
+                    challenges.</p>
+                <p>In the years that followed, aggressive interest rate hikes by the Bank of Canada sought to cool down
+                    an overheated housing sector, leading to significant price corrections in 2022 and 2023. However, as
+                    economic conditions stabilized, the market showed signs of resilience, with renewed demand in late
+                    2023 and early 2024, though affordability concerns remained a pressing issue for prospective buyers.
+                </p>
+                <p>This analysis explores the key housing price trends from 2020 to 2025, the driving forces behind
+                    these changes—including government policies, economic conditions, and migration patterns—and
+                    speculates on the future direction of the GTA housing market. Through data visualization, we aim to
+                    highlight the areas where housing prices have risen or fallen and examine the broader implications
+                    of these fluctuations for homebuyers, investors, and policymakers.</p>
+                <br>
+                <div class="content-container">
+                    <div class="text-content">
+                        <h3>Housing Price Trends in GTA (2020-2025)</h3>
+                    </div>
+
+                    <div class="chart-container">
+
+                        <canvas id="myChart1"></canvas>
+                    </div>
+                </div>
+                <script>
+                    const ctx1 = document.getElementById('myChart1');
+                    new Chart(ctx1, {
+                        type: 'line',
+                        data: {
+                            labels: [
+                                '2020',
+                                '2021',
+                                '2022',
+                                '2023',
+                                '2024',
+                                '2025',
+                            ],
+                            datasets: [
+                                {
+                                    label: 'Toronto',
+                                    data: [
+                                        1000000, 1100000, 1155000, 1132000, 1130000, 1164000
+                                    ],
+                                    borderWidth: 3 // Increased border width
+                                },
+                                {
+                                    label: 'Durham',
+                                    data: [
+                                        700000, 805000, 885000, 859000, 860000, 894000
+                                    ],
+                                    borderWidth: 3 // Increased border width
+                                },
+                                {
+                                    label: 'Halton',
+                                    data: [
+                                        900000, 1008000, 1078000, 1056000, 1055000, 1086000
+                                    ],
+                                    borderWidth: 3 // Increased border width
+                                },
+                                {
+                                    label: 'Peel',
+                                    data: [
+                                        850000, 969000, 1027000, 996000, 995000, 1035000
+                                    ],
+                                    borderWidth: 3 // Increased border width
+                                },
+                                {
+                                    label: 'York',
+                                    data: [
+                                        950000, 1054000, 1138000, 1115000, 1114000, 1147000
+                                    ],
+                                    borderWidth: 3 // Increased border width
+                                }
+                            ]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: false,
+                                    min: 600000,
+                                    ticks: {
+                                        callback: function (value) {
+                                            if (value === 200000 || value === 400000) {
+                                                return '';
+                                            }
+                                            return value + ' CAD';
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                </script>
+                <br> 
+                <p><strong>Early 2020:</strong> At the pandemic's outset, there was a brief slowdown in the
+                    housing market due to economic uncertainties and lockdown measures.</p>
+                <p><strong>Mid to Late 2020:</strong> Contrary to initial forecasts predicting a decline,
+                    housing prices began to rise. Factors such as historically low interest rates, increased
+                    household savings, and a desire for more spacious living environments due to remote work
+                    contributed to this surge.</p>
+                <p><strong>2021:</strong> The upward trajectory continued, with the Canadian Real Estate
+                    Association's House Price Index recording a 26.6% increase by the end of the year—the
+                    fastest annual pace on record.</p>
+                <p><strong>2022:</strong> Prices peaked in February, followed by a decline as the Bank of Canada
+                    initiated interest rate hikes in March to combat inflation. By September, the Greater
+                    Toronto Area saw average detached home prices decrease by nearly $400,000 from their peak.
+                </p>
+                <p><strong>2023–2024:</strong> The market stabilized with modest price increases. However,
+                    affordability remained a significant concern due to elevated interest rates and high home
+                    prices.</p>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="col-12 mt-4">
+
+                <h3>Factors Influencing Price Changes (2020-2025)</h3>
+                <div class="chart-container">
+                    <canvas id="myChart2"></canvas>
+                </div>
+                <script>
+                    const ctx2 = document.getElementById('myChart2');
+                    new Chart(ctx2, {
+                        type: 'pie',
+                        data: {
+                            labels: ['Interest rates', 'Supply and demand dynamics', 'Migration patterns', 'Government policy'],
+                            datasets: [{
+                                label: '# of Responses',
+                                data: [42, 30, 18, 10],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                </script>
+                <p><strong>Interest Rates:</strong> The Bank of Canada's reduction of interest rates to historic lows in
+                    2020 spurred borrowing and increased demand. Subsequent rate hikes beginning in 2022 cooled the
+                    market by increasing borrowing costs.</p>
+                <p><strong>Supply and Demand Dynamics:</strong> A persistent housing shortage, exacerbated by
+                    underbuilding in previous years and supply chain disruptions during the pandemic, intensified
+                    competition among buyers, driving prices upward.</p>
+                <p><strong>Migration Patterns:</strong> The pandemic prompted a shift as individuals sought larger
+                    living spaces, leading to increased demand in suburban areas of the GTA.</p>
+                <p><strong>Government Policies:</strong> Measures such as the federal government's two-year ban on 
+                    foreign homebuyers, introduced in 2022 to curb speculation, impacted demand dynamics.
+            </div>
+            
+            <br>
+            <br>
+
+            <div class="col-12 mt-4">
+                <h3>Preference Changes For Property Types in GTA (2020-2025)</h3>
+                <div class="chart-container">
+                    <canvas id="myChart3"></canvas>
+                </div>
+                <script>
+                    const ctx3 = document.getElementById('myChart3');
+                    new Chart(ctx3, {
+                        type: 'bar',
+                        data: {
+                            labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
+                            datasets: [
+                                {
+                                    label: 'Detached house',
+                                    data: [60, 55, 50, 45, 40, 38],
+                                    borderWidth: 1
+                                },
+                                {
+                                    label: 'Townhouse',
+                                    data: [20, 22, 24, 28, 30, 32],
+                                    borderWidth: 1
+                                },
+                                {
+                                    label: 'Condo',
+                                    data: [20, 23, 26, 27, 30, 30],
+                                    borderWidth: 1
+                                }
+                            ]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: {
+                                        callback: function(value) {
+                                            return value + '%';
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                </script>
+                <p><strong>Detached House:</strong> Between 2020 and 2025, the preference for detached homes declined from 60% to 38% as affordability became a major concern. Rising interest rates and high mortgage costs made it harder for buyers to afford large homes, pushing them towards smaller alternatives. Additionally, younger buyers preferred urban convenience over suburban space, further reducing demand for detached houses.</p>
+                <p><strong>Townhouse:</strong> Townhouses saw an increase in preference from 20% to 32%, as they became the best alternative to expensive detached homes. Many first-time buyers and families sought townhouses for their balance of affordability, space, and proximity to urban areas. Improved transit access and suburban developments also contributed to the rising demand for townhouses.</p>
+                <p><strong>Condo:</strong> Despite an initial decline in 2020 due to the pandemic-driven suburban shift, condo demand rebounded, rising from 20% to 30% by 2025. As more people returned to city life and office work, condos became appealing for their affordability and convenience. Additionally, investors and renters kept demand stable, making condos a strong long-term housing option.</p>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="col-12 mt-4">
+                <h3>Interest Rate Trends (2020-2025)</h3>
+                <div class="chart-container">
+                    <canvas id="myChart4"></canvas>
+                </div>
+                <script>
+                    const ctx4 = document.getElementById('myChart4');
+                    new Chart(ctx4, {
+                        type: 'line',
+                        data: {
+                            labels: [
+                                '2020',
+                                '2021',
+                                '2022',
+                                '2023',
+                                '2024',
+                                '2025',
+                            ],
+                            datasets: [
+                                {
+                                    label: 'Average interest rate (%)',
+                                    data: [
+                                        0.25, 0.25, 3.25, 4.5, 4.75, 4
+                                    ],
+                                    borderWidth: 3,
+                                    borderColor: 'red',
+                                    backgroundColor: 'red'
+                                }
+                            ]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: false,
+                                    ticks: {
+                                        callback: function (value) {
+                                            return value + ' %';
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                </script>
+                <p><strong>2020-2021: Low Rates and Housing Boom</strong></p>                     
+                    <p>The Bank of Canada cut interest rates to 0.25% to stimulate the economy during the COVID-19 pandemic. 
+                        This made mortgages cheaper, leading to a surge in homebuying activity and skyrocketing housing prices. 
+                        The demand for detached homes increased, as buyers sought more space due to remote work.</p>
+                    
+                        <p><strong>2022-2024: High Rates and Market Slowdown</strong></p>
+                    <p>To combat rising inflation, the Bank of Canada aggressively raised interest rates from 3.25% to 4.75%, 
+                    making mortgages significantly more expensive. Housing demand dropped, causing price corrections 
+                    in several GTA regions. Many buyers were priced out of the market, leading to slower home sales and 
+                    a shift toward more affordable housing options like condos and townhouses.</p>
+                    
+                    <p><strong>2025: Expected Rate Cuts and Market Adjustment</strong></p>
+                    <p>As inflation stabilizes, the Bank of Canada is expected to lower interest rates to 4.00%, 
+                        improving mortgage affordability. This could increase homebuying activity, but prices may remain 
+                        high due to ongoing supply shortages. The market is expected to gradually recover, with townhouses 
+                        and condos remaining the most in-demand housing types.</p>
+            </div>
+
+            <br>
+            <br>
+            
+            <div class="col-12 mt-4">
+                <h3>Future Projection</h3>
+                <p>The GTA housing market has demonstrated resilience amid the challenges posed by the COVID-19 pandemic. 
+                    While price growth has moderated, affordability remains a pressing issue. 
+                    Future market stability will hinge on balanced supply and demand, prudent monetary policies, 
+                    and effective government interventions. Analysts anticipate modest price increases, with projections around 2.8% for 2025. 
+                    While interest rate cuts are expected, affordability challenges may persist due to high home prices and 
+                    potential economic uncertainties. Sustained affordability will depend on factors such as housing supply expansion, 
+                    economic conditions, and government interventions. Addressing the supply-demand imbalance through increased construction 
+                    and policy measures will be crucial.
+                </p>
+                <br>
+                <br>
+            </div>
+            
+        </div>
+    </div>
+</body>
+
+</html>

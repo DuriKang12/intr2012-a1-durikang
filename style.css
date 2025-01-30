@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 70px; /* Increased font size */
+    text-align: center; /* Centered text */
+}
+
+h3 {
+    font-size: 30px; /* Increased font size */
+    color: rgb(58, 119, 198);
+}
+
+p {
+    font-size: 20px; /* Increased font size */
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Adjust the width as needed */
+    height: 600px; /* Adjust the height as needed */
+    margin: auto;
+}
+
+.chart-container canvas {
+    width: 100%; /* Adjust the width as needed */
+    height: 100%; /* Adjust the height as needed */
+}
+
